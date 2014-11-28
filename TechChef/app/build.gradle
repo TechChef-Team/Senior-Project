@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        keysigning {
+            keyAlias 'TechChefKey'
+            keyPassword 'swe.techchef'
+            storeFile file('C:/Android Studio/bin/keystore.jks')
+            storePassword 'swe.techchef'
+        }
+    }
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
-
+    buildToolsVersion '21.1.1'
     defaultConfig {
         applicationId "com.senior.techchef"
         minSdkVersion 19
