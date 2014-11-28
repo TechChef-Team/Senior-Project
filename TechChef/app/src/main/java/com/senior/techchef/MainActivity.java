@@ -3,6 +3,7 @@ package com.senior.techchef;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +26,21 @@ public class MainActivity extends Activity {
         }
     }
 
+
+    public void showWaiterView(){
+        Intent intent = new Intent(this,WaiterView.class);
+        startActivity(intent);
+    }
+
+    public void showChefView() {
+        Intent intent = new Intent(this,ChefView.class);
+        startActivity(intent);
+    }
+
+    public void showCustomerView() {
+        Intent intent = new Intent(this,CustomerMenu.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
