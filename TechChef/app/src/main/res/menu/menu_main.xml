@@ -3,6 +3,6 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
 
-    <item android:id="@+id/action_bell" android:title="@string/action_notify_waiter"
+    <item android:id="@+id/action_notify_waiter" android:title="@string/action_notify_waiter"
         android:icon="@drawable/ic_action_notify_waiter" android:showAsAction="ifRoom" />
 </menu>
