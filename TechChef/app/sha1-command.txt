@@ -1,0 +1,1 @@
+keytool -exportcert -alias TechChefKey -keystore C:\keystore.jks -list -v
