@@ -4,14 +4,22 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 public class ChefView extends Activity {
+    ArrayAdapter<String> muAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_view);
+
+        String [] menuItems = {"salad","yes"};
+        muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, menuItems);
+        ListView listView = (ListView) findViewById(R.id.cheflist);
+        listView.setAdapter(muAdapter);
     }
 
 
