@@ -15,10 +15,10 @@ public class CustomerMenu extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cutomer_menu);
 
-        String [] menuItems = {"salad","yes"};
+       /* String [] menuItems = {"salad","yes"};
         muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, menuItems);
         ListView listView = (ListView) findViewById(R.id.listView4);
-        listView.setAdapter(muAdapter);
+        listView.setAdapter(muAdapter);*/
     }
 
 
