@@ -28,17 +28,17 @@ public class MainActivity extends Activity {
     }
 
 
-    public void showWaiterView(){
+    public void showWaiterView(View v){
         Intent intent = new Intent(this,WaiterView.class);
         startActivity(intent);
     }
 
-    public void showChefView() {
+    public void showChefView(View v) {
         Intent intent = new Intent(this,ChefView.class);
         startActivity(intent);
     }
 
-    public void showCustomerView() {
+    public void showCustomerView(View v) {
         Intent intent = new Intent(this,CustomerMenu.class);
         startActivity(intent);
     }
