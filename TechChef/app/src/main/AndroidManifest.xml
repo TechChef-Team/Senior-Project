@@ -29,8 +29,12 @@
             android:label="@string/title_activity_monitor_tables" >
         </activity>
         <activity
-            android:name=".CustomerMenu"
+            android:name="com.senior.techchef.CustomerMenu"
             android:label="@string/title_activity_cutomer_menu" >
+        </activity>
+        <activity
+            android:name="com.senior.techchef.restaurant"
+            android:label="@string/title_activity_restaurant" >
         </activity>
     </application>
 

@@ -12,5 +12,6 @@
     <string name="waiter">Watier View</string>
     <string name="title_activity_monitor_tables">MonitorTables</string>
     <string name="title_activity_cutomer_menu">CutomerMenu</string>
+    <string name="title_activity_restaurant">restaurant</string>
 
 </resources>
