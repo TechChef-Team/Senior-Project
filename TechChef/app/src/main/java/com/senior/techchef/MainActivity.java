@@ -13,6 +13,10 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ArrayAdapter;
 
+import com.senior.techchef.orders.meals;
+
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
 
@@ -25,6 +29,8 @@ public class MainActivity extends Activity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+
     }
 
 
@@ -80,4 +86,7 @@ public class MainActivity extends Activity {
             return rootView;
         }
     }
+
+
+
 }

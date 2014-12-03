@@ -4,6 +4,9 @@ import com.senior.techchef.orders.orders;
 import com.senior.techchef.users.employees;
 import com.senior.techchef.users.waiters;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class tables {
 
 	private orders order = new orders();
@@ -11,7 +14,14 @@ public class tables {
 	private int tableId;
     private String tableStatus;
     private waiters waiter = new waiters();
-    
+
+    public tables(int tableId,String tableStatus,orders order){
+        this.tableId=tableId;
+        this.tableStatus=tableStatus;
+        this.order=order;
+        //this.waiter=waiter;
+    }
+    public tables(int tableId){this.tableId=tableId;}
     public void addWaiter(waiters waiter)
     {
        this.waiter=waiter;        	
@@ -53,7 +63,22 @@ public class tables {
     public void updateTableStatus(){
     	///// update on tablet /////
     }
-    
+    public tables getTableById(int id,ArrayList<tables> table){
+        tables requestedTable=null;
+        tables iteratedTable;
+        Iterator tableIterator = table.iterator();
+        for(int x = 0;x<table.size();x++){
+            if(tableIterator.hasNext()) {
+                iteratedTable = (tables) tableIterator.next();
+                if(iteratedTable.getTableId()==id)
+                    requestedTable=iteratedTable;
+            }
+        }
+        return requestedTable;
+    }
+    public String toString(){
+        return "Table ID : "+this.tableId+"\n Table Status: "+this.tableStatus;
+    }
     
    
     

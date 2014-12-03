@@ -7,17 +7,46 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.senior.techchef.orders.menu;
+import com.senior.techchef.orders.orders;
+import com.senior.techchef.users.ordersList;
+
+import java.util.ArrayList;
+
 
 public class ChefView extends Activity {
     ArrayAdapter<String> muAdapter;
-
+    orders order1 = new orders();
+    orders order2 = new orders();
+    orders order3 = new orders();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_view);
+        ordersList orderlist = new ordersList();
 
-        String [] menuItems = {"salad","yes"};
-        muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, menuItems);
+        menu mainMenu = new menu();
+
+
+        order1.addMeal(mainMenu.getMeal(2));
+        order1.addMeal(mainMenu.getMeal(1));
+        order1.addMeal(mainMenu.getMeal(3));
+
+        order2.addMeal(mainMenu.getMeal(4));
+        order2.addMeal(mainMenu.getMeal(2));
+        order2.addMeal(mainMenu.getMeal(1));
+
+        order3.addMeal(mainMenu.getMeal(0));
+        order3.addMeal(mainMenu.getMeal(3));
+        order3.addMeal(mainMenu.getMeal(5));
+
+        orderlist.addOrder(order1);
+        orderlist.addOrder(order2);
+        orderlist.addOrder(order3);
+
+        ArrayList<String> chefOrdersString = new ArrayList<String>(orderlist.getOrderDetails(2));
+
+        muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, chefOrdersString);
         ListView listView = (ListView) findViewById(R.id.cheflist);
         listView.setAdapter(muAdapter);
     }

@@ -7,15 +7,18 @@ import java.util.*;
 
 public class ordersList {
  
-	ArrayList<orders> orderList;
+	ArrayList<orders> orderList = new ArrayList<orders>();
 	public void addOrder(orders order){
 		this.orderList.add(order);
-		updateOrderView();
+		//updateOrderView();
 	}
 	public void removeOrder(orders order){
 		this.orderList.remove(order);
-		updateOrderView();
+		//updateOrderView();
 	}
+    public ArrayList<orders> getOrderList(){
+        return this.orderList;
+    }
 	public void updateOrderView(){
 		  ArrayList<orders> tempArrayOrders = this.orderList;
 		  int tableIdCounter=0;
@@ -50,5 +53,9 @@ public class ordersList {
 			  tableIdCounter++;
 		  }
 		}
+    public ArrayList<String> getOrderDetails(int index){
+        return orderList.get(index).viewOrder();
+    }
+
 	}
 

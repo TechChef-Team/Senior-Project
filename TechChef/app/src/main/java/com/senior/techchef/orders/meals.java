@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class meals {
  
 	private int quantity=1;
-    private ArrayList<mealItems> items;
+    private ArrayList<mealItems> items = new ArrayList<mealItems>();
     private String name;
     private double price;
     private int category=0;
@@ -56,5 +56,14 @@ public class meals {
     }
     public void viewMealImage(){
     	
+    }
+    public String getName(){
+        return this.name;
+    }
+    public double getPrice(){
+        return this.price;
+    }
+    public String toString(){
+        return this.getName()+"  "+getPrice()+"$";
     }
 }
