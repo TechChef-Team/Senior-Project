@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class restaurant extends Activity {
+public class RestaurantView extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

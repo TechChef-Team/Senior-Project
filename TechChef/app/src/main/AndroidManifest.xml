@@ -33,7 +33,7 @@
             android:label="@string/title_activity_cutomer_menu" >
         </activity>
         <activity
-            android:name="com.senior.techchef.restaurant"
+            android:name=".RestaurantView"
             android:label="@string/title_activity_restaurant" >
         </activity>
     </application>
