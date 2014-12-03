@@ -18,11 +18,13 @@
         </activity>
         <activity
             android:name="com.senior.techchef.WaiterView"
-            android:label="@string/title_activity_waiter_view" >
+            android:label="@string/title_activity_waiter_view"
+            android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name="com.senior.techchef.ChefView"
-            android:label="@string/title_activity_chef_view" >
+            android:label="@string/title_activity_chef_view"
+            android:parentActivityName=".MainActivity">
         </activity>
         <activity
             android:name="com.senior.techchef.MonitorTables"
@@ -30,7 +32,9 @@
         </activity>
         <activity
             android:name="com.senior.techchef.CustomerMenu"
-            android:label="@string/title_activity_cutomer_menu" >
+            android:label="@string/title_activity_cutomer_menu"
+            android:parentActivityName=".MainActivity"
+            >
         </activity>
         <activity
             android:name=".RestaurantView"
