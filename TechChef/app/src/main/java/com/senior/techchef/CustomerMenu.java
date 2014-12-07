@@ -16,7 +16,7 @@ public class CustomerMenu extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cutomer_menu);
+        setContentView(R.layout.activity_customer_menu);
 
         menu mainMenu = new menu();
         ArrayList<String> sandwiches=new ArrayList<String>(mainMenu.getSandwiches());
@@ -26,12 +26,25 @@ public class CustomerMenu extends Activity {
 
 
         muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, sandwiches);
-        ListView listView = (ListView) findViewById(R.id.listView4);
+
+        ListView listView;
+
+        listView = (ListView) findViewById(R.id.salad_list);
         listView.setAdapter(muAdapter);
+
+        listView = (ListView) findViewById(R.id.poteto_list);
+        listView.setAdapter(muAdapter);
+
+        listView = (ListView) findViewById(R.id.sweet_list);
+        listView.setAdapter(muAdapter);
+
+        listView = (ListView) findViewById(R.id.pasta_list);
+        listView.setAdapter(muAdapter);
+
+        listView = (ListView) findViewById(R.id.wraps_list);
+        listView.setAdapter(muAdapter);
+
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -20,7 +20,7 @@ public class MonitorTables extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitor_tables);
 
-        String [] menuItems = {"salad","yes"};
+        String [] menuItems = {"Table 1","Table 2","Table 3","Table 4"};
         muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, menuItems);
         ListView listView = (ListView) findViewById(R.id.monitorlist);
         listView.setAdapter(muAdapter);

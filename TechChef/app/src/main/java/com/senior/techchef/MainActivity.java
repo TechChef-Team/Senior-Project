@@ -32,22 +32,27 @@ public class MainActivity extends Activity {
 
 
     }
-
+    public void showCustomerView(View v) {
+        int i = 3;
+        Intent intent = new Intent(this,RestaurantView.class);
+        intent.putExtra("POSITION", i);
+        startActivity(intent);
+    }
 
     public void showWaiterView(View v){
-        Intent intent = new Intent(this,WaiterView.class);
+        int i = 1;
+        Intent intent = new Intent(this,RestaurantView.class);
+        intent.putExtra("POSITION", i);
         startActivity(intent);
     }
 
     public void showChefView(View v) {
-        Intent intent = new Intent(this,ChefView.class);
+        int i = 2;
+        Intent intent = new Intent(this,RestaurantView.class);
+        intent.putExtra("POSITION", i);
         startActivity(intent);
     }
 
-    public void showCustomerView(View v) {
-        Intent intent = new Intent(this,CustomerMenu.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
