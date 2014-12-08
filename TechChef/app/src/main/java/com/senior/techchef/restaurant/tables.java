@@ -40,7 +40,7 @@ public class tables {
     	updateTableStatus();
     }
     
-    public employees getWaiter(){
+    public waiters getWaiter(){
     	return waiter;
     }
     public orders getOrder(){

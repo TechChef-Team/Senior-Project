@@ -37,7 +37,7 @@ public class waiters extends employees {
 	public void reserveTable(Date Date,int tablesId,String customerName){
 	 
 	}
-	public void printRecepit(tables table){
+	public void printReceipt(tables table){
 		table.getOrder().printReceipt();
 	}
     public void addTable(tables table){
