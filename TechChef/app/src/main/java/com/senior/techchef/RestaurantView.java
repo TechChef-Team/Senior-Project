@@ -180,18 +180,22 @@ public class RestaurantView extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
-
                 currentOrder=waiter1.getTables().get(position).getOrder();
                 orderDetails = currentOrder.viewOrder();
 
+                setContentView(R.layout.activity_table_view_for_monitor_table);
                 setNewAdapter();
+
+
 
 
 
 
             }
         });
+    }
+    public ArrayList<String> getOrderDetails(){
+        return orderDetails;
     }
 
     public void createChefAdapters() {

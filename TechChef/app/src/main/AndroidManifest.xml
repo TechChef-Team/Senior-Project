@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -23,11 +22,11 @@
         </activity>
         <activity
             android:name="com.senior.techchef.WaiterView"
-            android:label="@string/title_activity_waiter_view">
+            android:label="@string/title_activity_waiter_view" >
         </activity>
         <activity
             android:name="com.senior.techchef.ChefView"
-            android:label="@string/title_activity_chef_view">
+            android:label="@string/title_activity_chef_view" >
         </activity>
         <activity
             android:name="com.senior.techchef.MonitorTables"
@@ -35,12 +34,16 @@
         </activity>
         <activity
             android:name="com.senior.techchef.CustomerMenu"
-            android:label="@string/title_activity_cutomer_menu">
+            android:label="@string/title_activity_cutomer_menu" >
         </activity>
         <activity
-            android:name=".RestaurantView"
+            android:name="com.senior.techchef.RestaurantView"
             android:label="@string/title_activity_restaurant"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="com.senior.techchef.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.senior.techchef.TableViewForMonitorTable"
+            android:label="@string/title_activity_table_view_for_monitor_table" >
         </activity>
     </application>
 

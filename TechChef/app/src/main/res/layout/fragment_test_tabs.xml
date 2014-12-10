@@ -1,0 +1,35 @@
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.senior.techchef.TestTabs">
+
+
+    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+        />
+
+    <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarTabBarStyle">@style/MyTheme.ActionBar.TabBar</item>
+        <item name="android:actionBarTabStyle">@style/MyTheme.ActionBar.TabView</item>
+        <item name="android:actionBarTabTextStyle">@style/MyTheme.ActionBar.TabText</item>
+    </style>
+
+    <style name="MyTheme.ActionBar.TabBar" parent="android:style/Widget.Holo.Light.ActionBar.TabBar">
+        <!-- This is an ORANGE background -->
+ <item name="android:background">@drawable/tab_bar_background</item>
+</style>-->
+
+
+
+        <style name="MyTheme.ActionBar.TabView" parent="android:style/Widget.Holo.ActionBar.TabView">
+            <!-- This is a GREEN background -->
+      <item name="android:background">@drawable/tab_view_background</item>-->
+     </style>
+     -->
+   <style name="MyTheme.ActionBar.TabText" parent="android:style/Widget.Holo.ActionBar.TabText">
+        <!--This is a WHITE tab color -->
+    <item name="android:textColor">@android:color/white</item>
+
+     </style>
+
+    </FrameLayout>

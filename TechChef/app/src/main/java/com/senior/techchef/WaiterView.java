@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.senior.techchef.orders.menu;
 import com.senior.techchef.orders.orders;
 import com.senior.techchef.restaurant.tables;
@@ -59,7 +63,18 @@ public class WaiterView extends Activity {
         //String [] menuItems = {"salad","yes"};
         muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, tableStrings);
         ListView listView = (ListView) findViewById(R.id.waiterorder);
-        listView.setAdapter(muAdapter);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Toast.makeText(getApplicationContext(),
+                        "Click ListItem Number " + position, Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+
     }
 
 

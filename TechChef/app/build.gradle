@@ -13,7 +13,7 @@ android {
     buildToolsVersion '21.1.1'
     defaultConfig {
         applicationId "com.senior.techchef"
-        minSdkVersion 19
+        minSdkVersion 18
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
