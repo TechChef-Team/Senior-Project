@@ -26,7 +26,8 @@
             android:layout_width="300px"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:layout_marginRight="80px"/>
+            android:layout_marginRight="80px"
+             />
 
         <include layout="@layout/fragment_item_list"
             android:layout_width="300px"
