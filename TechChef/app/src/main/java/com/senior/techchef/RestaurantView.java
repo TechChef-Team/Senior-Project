@@ -29,7 +29,7 @@ public class RestaurantView extends Activity {
     orders order1 = new orders();
     orders order2 = new orders();
     orders order3 = new orders();
-    ArrayList<String> orderDetails= new ArrayList<String>();
+    static ArrayList<String> orderDetails= new ArrayList<String>();
     tables currentTable;
     tables table1;
     tables table2;
@@ -183,9 +183,9 @@ public class RestaurantView extends Activity {
                 currentOrder=waiter1.getTables().get(position).getOrder();
                 orderDetails = currentOrder.viewOrder();
 
-                setContentView(R.layout.activity_table_view_for_monitor_table);
-                setNewAdapter();
 
+
+                showDetailedOrderView(view);
 
 
 
@@ -194,6 +194,7 @@ public class RestaurantView extends Activity {
             }
         });
     }
+
     public ArrayList<String> getOrderDetails(){
         return orderDetails;
     }
@@ -241,5 +242,9 @@ public class RestaurantView extends Activity {
     public void setNewAdapter(){
         muAdapter2 = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, orderDetails);
         listView.setAdapter(muAdapter2);
+    }
+    public void showDetailedOrderView(View v) {
+        Intent intent = new Intent(this,TableViewForMonitorTable.class);
+        startActivity(intent);
     }
 }

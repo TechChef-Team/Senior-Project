@@ -24,28 +24,23 @@ public class TableViewForMonitorTable extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(activity_table_view_for_monitor_table);
+        setContentView(R.layout.activity_table_view_for_monitor_table);
 
 
 
 
         //Adapter
         RestaurantView r = new RestaurantView();
-        ArrayList<String> detailedOrder = r.getOrderDetails();
-        ArrayAdapter<String> muAdapter, muAdapter1;
 
-        /*muAdapter = new ArrayAdapter<String>(this, activity_table_view_for_monitor_table, R.id.detailedOrder, detailedOrder);
-        ListView myListView1 = (ListView)findViewById(R.id.detailedOrder);
-        myListView1.setAdapter(muAdapter);
+        ArrayList<String> detailedOrder1 = RestaurantView.orderDetails;
 
-        */
-        muAdapter1 = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, detailedOrder);
+        ArrayAdapter<String> muAdapter;
 
-        ListView listView;
-        listView = (ListView) findViewById(R.id.poteto_list);
-        listView.setAdapter(muAdapter1);
+        muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, detailedOrder1);
+        ListView listView = (ListView) findViewById(R.id.detailedOrder);
+        listView.setAdapter(muAdapter);
 
-        //myListView1.setOnClickListener();
+
 
 
 
