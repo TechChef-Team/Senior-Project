@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.Toast;
 
 import com.senior.techchef.orders.menu;
@@ -83,9 +84,17 @@ public class RestaurantView extends Activity {
 
         tabs.setCurrentTab(selectedTab);
 
+        // Style tabs colors
+
+        TabWidget widget = tabs.getTabWidget();
+        for(int i = 0; i < widget.getChildCount(); i++)
+        {
+            View v = widget.getChildAt(i);
+            v.setBackgroundResource(R.drawable.tab_indicator_techchef);
+        }
+
+
         // Implement adapters
-
-
         createCustomerAdapters();
         createChefAdapters();
         createWaiterAdapters();

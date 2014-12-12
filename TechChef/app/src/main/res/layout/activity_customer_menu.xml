@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true">
 
-    <include layout="@layout/fragment_category_salad"
+    <include layout="@layout/fragment_category_wraps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
@@ -46,10 +46,11 @@
         android:layout_gravity="top"
         android:layout_marginRight="80px"/>
 
-    <include layout="@layout/fragment_category_wraps"
+    <include layout="@layout/fragment_category_salad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top"/>
+
 
     </LinearLayout>
 
