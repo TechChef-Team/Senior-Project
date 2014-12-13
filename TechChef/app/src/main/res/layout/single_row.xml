@@ -11,8 +11,7 @@
         android:id="@+id/innerText"
         android:paddingTop="20dp"
         android:paddingLeft="3dp"
-        android:textSize="18sp"
-        android:onClick="showTableDetails"/>
+        android:textSize="18sp"/>
 
 
 </LinearLayout>

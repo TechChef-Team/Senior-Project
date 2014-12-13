@@ -191,7 +191,9 @@ public class RestaurantView extends Activity {
         tableStrings.add(table2.toString());
         tableStrings.add(table3.toString());
         //String [] menuItems = {"salad","yes"};
-        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, tableStrings);
+
+        muAdapter = new ArrayAdapter<String>(this, R.layout.table_row, R.id.innerText2, tableStrings);
+        //muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, tableStrings);
 
         listView = (ListView) findViewById(R.id.waiterorder);
         listView.setAdapter(muAdapter);
