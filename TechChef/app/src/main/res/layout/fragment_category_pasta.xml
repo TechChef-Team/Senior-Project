@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pasta_list"
+        android:divider="@color/divider_color"
+        android:dividerHeight="1px"
         android:choiceMode="singleChoice">
     </ListView>
 

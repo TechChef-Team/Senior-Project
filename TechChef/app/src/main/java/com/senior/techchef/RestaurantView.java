@@ -127,8 +127,20 @@ public class RestaurantView extends Activity {
 
     public void createCustomerAdapters() {
 
+        ArrayList<String> dummyArray = new ArrayList<String>();
 
-        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, sandwiches);
+
+        dummyArray.add("Appetizer Platter                                                 48$");
+        dummyArray.add("Chocolate Souffle                                               38$");
+        dummyArray.add("Mix Chicken Pasta                                              21$");
+        dummyArray.add("Grill Shrimp  Combo                                           41$");
+        dummyArray.add("Rib-Eye Steak BBQ                                              73$");
+        dummyArray.add("Fried Italy Chicken                                              21$");
+        dummyArray.add("Caesar Salad Sandwich                                     51$");
+
+        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, dummyArray);
+
+        //muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, sandwiches);
 
 
         listView = (ListView) findViewById(R.id.salad_list);

@@ -2,4 +2,6 @@
 <resources>
     <color name="brand_color">#9a2338</color>
     <color name="accent_color">#f5f5f5</color>
+    <color name="tab_color">#e63340</color>
+    <color name="divider_color">#e63340</color>
 </resources>
