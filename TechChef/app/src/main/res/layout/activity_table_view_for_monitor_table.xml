@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/detailedOrder"
         android:layout_alignParentTop="true"
-         />
+        android:listSelector="@color/selector_color"/>
 
 </RelativeLayout>

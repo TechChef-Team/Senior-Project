@@ -12,7 +12,8 @@
         android:id="@+id/waiterorder"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:choiceMode="singleChoice" />
+        android:choiceMode="singleChoice"
+        android:listSelector="@color/selector_color"/>
 
 
 
