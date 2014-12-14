@@ -16,7 +16,8 @@
         android:id="@+id/sweet_list"
         android:divider="@color/divider_color"
         android:dividerHeight="1px"
-        android:choiceMode="singleChoice">
+        android:choiceMode="multipleChoice"
+        android:listSelector="@color/selector_color">
     </ListView>
 
 </LinearLayout>
