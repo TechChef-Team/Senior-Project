@@ -15,6 +15,13 @@
         android:choiceMode="singleChoice"
         android:listSelector="@color/selector_color"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add Order to1"
+        android:id="@+id/addOrderToTableButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

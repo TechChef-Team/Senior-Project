@@ -1,12 +1,19 @@
 package com.senior.techchef;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.senior.techchef.restaurant.tables;
 import com.senior.techchef.orders.orders;
@@ -17,8 +24,8 @@ import static com.senior.techchef.R.layout.activity_table_view_for_monitor_table
 
 public class TableViewForMonitorTable extends Activity {
 
-
-
+    ArrayAdapter<String> muAdapter;
+    //ArrayList<String> detailedOrder1 = RestaurantView.orderDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,18 +37,6 @@ public class TableViewForMonitorTable extends Activity {
 
 
         //Adapter
-        RestaurantView r = new RestaurantView();
-
-        ArrayList<String> detailedOrder1 = RestaurantView.orderDetails;
-
-        ArrayAdapter<String> muAdapter;
-
-        muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, detailedOrder1);
-        ListView listView = (ListView) findViewById(R.id.detailedOrder);
-        listView.setAdapter(muAdapter);
-
-
-
 
 
 

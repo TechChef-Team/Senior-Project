@@ -1,17 +1,31 @@
 package com.senior.techchef;
 
+import android.animation.LayoutTransition;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toolbar;
+
 
 import com.senior.techchef.orders.menu;
 import com.senior.techchef.orders.orders;
@@ -19,13 +33,14 @@ import com.senior.techchef.restaurant.tables;
 import com.senior.techchef.users.ordersList;
 import com.senior.techchef.users.waiters;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
 public class RestaurantView extends Activity {
     ArrayList<String> tableStrings = new ArrayList<String>();
     ArrayAdapter<String> muAdapter;
-    ArrayAdapter<String> muAdapter2;
+
     orders currentOrder = new orders();
     orders order1 = new orders();
     orders order2 = new orders();
@@ -36,6 +51,7 @@ public class RestaurantView extends Activity {
     tables table2;
     tables table3;
     ListView listView;
+
 
     menu mainMenu = new menu();
     ArrayList<String> sandwiches = new ArrayList<String>(mainMenu.getSandwiches());
@@ -48,8 +64,23 @@ public class RestaurantView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
-        // Tab implementation on java code
+        final LinearLayout container = (LinearLayout) findViewById(R.id.chefListContainer);
+        LayoutTransition transition = container.getLayoutTransition();
+        transition.enableTransitionType(LayoutTransition.CHANGING);
 
+        // Tab implementation on java code
+        final Button addOrderButton = (Button)findViewById(R.id.addOrderToTableButton);
+        final Button DoneButton1 =(Button) findViewById(R.id.orderDone1);
+        final Button DoneButton2 =(Button) findViewById(R.id.orderDone2);
+        final Button DoneButton3 =(Button) findViewById(R.id.orderDone3);
+        final Button DoneButton4 =(Button) findViewById(R.id.orderDone4);
+        final RelativeLayout tableOrderDetailsContainer = (RelativeLayout)findViewById(R.id.tableOrderView);
+
+        final FrameLayout container1 = (FrameLayout) findViewById(R.id.framentItemListContainer1);
+        final FrameLayout container2 = (FrameLayout) findViewById(R.id.framentItemListContainer2);
+        final FrameLayout container3 = (FrameLayout) findViewById(R.id.framentItemListContainer3);
+        final FrameLayout container4 = (FrameLayout) findViewById(R.id.framentItemListContainer4);
+        final Context context = this;
         TabHost tabs = (TabHost) findViewById(android.R.id.tabhost);
         tabs.setup();
 
@@ -98,6 +129,56 @@ public class RestaurantView extends Activity {
         createCustomerAdapters();
         createChefAdapters();
         createWaiterAdapters();
+
+
+
+        addOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+              tableOrderDetailsContainer.addView((View)createChefLayout(container));
+
+            }
+
+        });
+
+       DoneButton1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+                //container.removeView((View)container1);
+               container.addView((View)createChefLayout(container));
+
+
+
+           }
+        });
+        DoneButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                container.removeView((View)container2);
+
+            }
+        });
+        DoneButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                container.removeView((View)container3);
+
+            }
+        });
+        DoneButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                container.removeView((View)container4);
+
+            }
+        });
+
+
 
 
     }
@@ -206,13 +287,7 @@ public class RestaurantView extends Activity {
                 currentOrder=waiter1.getTables().get(position).getOrder();
                 orderDetails = currentOrder.viewOrder();
 
-
-
                 showDetailedOrderView(view);
-
-
-
-
 
             }
         });
@@ -244,11 +319,27 @@ public class RestaurantView extends Activity {
         orderlist.addOrder(order2);
         orderlist.addOrder(order3);
 
-        ArrayList<String> chefOrdersString = new ArrayList<String>(orderlist.getOrderDetails(2));
+        ArrayList<String> chefOrdersString1 = new ArrayList<String>(orderlist.getOrderDetails(0));
+        ArrayList<String> chefOrdersString2 = new ArrayList<String>(orderlist.getOrderDetails(1));
+        ArrayList<String> chefOrdersString3 = new ArrayList<String>(orderlist.getOrderDetails(2));
+        ArrayList<String> chefOrdersString4 = new ArrayList<String>(orderlist.getOrderDetails(1));
 
-        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, chefOrdersString);
-        listView = (ListView) findViewById(R.id.cheflist);
+
+        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, chefOrdersString1);
+
+        ListView listView;
+        listView = (ListView) findViewById(R.id.cheflist1);
         listView.setAdapter(muAdapter);
+        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, chefOrdersString2);
+        listView = (ListView) findViewById(R.id.cheflist2);
+        listView.setAdapter(muAdapter);
+        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, chefOrdersString3);
+        listView = (ListView) findViewById(R.id.cheflist3);
+        listView.setAdapter(muAdapter);
+        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, chefOrdersString4);
+        listView = (ListView) findViewById(R.id.cheflist4);
+        listView.setAdapter(muAdapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
@@ -262,12 +353,49 @@ public class RestaurantView extends Activity {
         });
 
     }
-    public void setNewAdapter(){
-        muAdapter2 = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, orderDetails);
-        listView.setAdapter(muAdapter2);
-    }
+
     public void showDetailedOrderView(View v) {
         Intent intent = new Intent(this,TableViewForMonitorTable.class);
         startActivity(intent);
     }
+
+    public FrameLayout createChefLayout(final LinearLayout container){
+        final FrameLayout newFrameLayout = new FrameLayout(this);
+        RelativeLayout newRelativeLayout = new RelativeLayout(this);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(Toolbar.LayoutParams.WRAP_CONTENT, Toolbar.LayoutParams.WRAP_CONTENT);// or wrap_content
+        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(Toolbar.LayoutParams.WRAP_CONTENT, Toolbar.LayoutParams.WRAP_CONTENT); // or wrap_content
+        layoutParams2.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        layoutParams2.addRule(RelativeLayout.CENTER_HORIZONTAL);
+
+
+        //newLayout.setOrientation(LinearLayout.VERTICAL);
+        ListView listView = new ListView(this);
+
+        ArrayList<String> chefOrdersString1 = new ArrayList<String>();
+        chefOrdersString1.add("HotDog Sandwich");
+        chefOrdersString1.add("Chilly Tacos");
+        chefOrdersString1.add("burrito Sandwich");
+        muAdapter = new ArrayAdapter<String>(this, R.layout.single_row, R.id.innerText, chefOrdersString1);
+        listView.setAdapter(muAdapter);
+        Button newButton = new Button(this);
+        newButton.setBackgroundColor(Color.argb(90,218,165,32));
+        newButton.setText("Done");
+        newRelativeLayout.addView((View) listView);
+        newRelativeLayout.addView((View)newButton,layoutParams2);
+        newFrameLayout.addView((View)newRelativeLayout,layoutParams);
+        newButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                container.removeView((View)newFrameLayout);
+
+            }
+        });
+
+        return newFrameLayout;
+
+
+    }
+
+   
 }

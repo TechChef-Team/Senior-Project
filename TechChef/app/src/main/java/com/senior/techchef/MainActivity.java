@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.senior.techchef.orders.meals;
 
@@ -28,6 +30,8 @@ public class MainActivity extends Activity {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
+
+
         }
 
 
@@ -91,6 +95,7 @@ public class MainActivity extends Activity {
             return rootView;
         }
     }
+
 
 
 

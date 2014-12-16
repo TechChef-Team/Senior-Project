@@ -1,13 +1,23 @@
 package com.senior.techchef;
 
+import android.animation.LayoutTransition;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.senior.techchef.orders.menu;
@@ -18,12 +28,16 @@ import java.util.ArrayList;
 
 
 public class ChefView extends Activity {
+
     ArrayAdapter<String> muAdapter;
     orders order1 = new orders();
     orders order2 = new orders();
     orders order3 = new orders();
+
+    final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chef_view);
         ordersList orderlist = new ordersList();
@@ -47,22 +61,49 @@ public class ChefView extends Activity {
         orderlist.addOrder(order2);
         orderlist.addOrder(order3);
 
-        ArrayList<String> chefOrdersString = new ArrayList<String>(orderlist.getOrderDetails(2));
 
-        muAdapter = new ArrayAdapter<String>(this,R.layout.single_row, R.id.innerText, chefOrdersString);
-        ListView listView = (ListView) findViewById(R.id.cheflist);
-        listView.setAdapter(muAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Toast.makeText(getApplicationContext(),
-                        "Click ListItem Number " + position, Toast.LENGTH_LONG)
-                        .show();
-            }
-        });
+
+
+
+
+
+
+
+
+
+
     }
+   /* private static class ColoredView extends View {
 
+        private boolean mExpanded = false;
+
+        private LinearLayout.LayoutParams mCompressedParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, 50);
+
+        private LinearLayout.LayoutParams mExpandedParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, 200);
+
+        private ColoredView(Context context) {
+            super(context);
+            int red = (int)(Math.random() * 128 + 127);
+            int green = (int)(Math.random() * 128 + 127);
+            int blue = (int)(Math.random() * 128 + 127);
+            int color = 0xff << 24 | (red << 16) |
+                    (green << 8) | blue;
+            setBackgroundColor(color);
+            setLayoutParams(mCompressedParams);
+            setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Size changes will cause a LayoutTransition animation if the CHANGING
+                    // transition is enabled
+                    setLayoutParams(mExpanded ? mCompressedParams : mExpandedParams);
+                    mExpanded = !mExpanded;
+                    requestLayout();
+                }
+            });
+        }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,4 +126,11 @@ public class ChefView extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void orderFinished(View t) {
+
+
+
+    }
 }
+
