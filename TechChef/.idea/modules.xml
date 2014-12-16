@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TechChef.iml" filepath="$PROJECT_DIR$/TechChef.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/techend/techend.iml" filepath="$PROJECT_DIR$/techend/techend.iml" />
     </modules>
   </component>
 </project>
