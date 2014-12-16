@@ -31,16 +31,15 @@ public class CustomerEndpoint {
         ObjectifyService.register(Order.class);
         ObjectifyService.register(Table.class);
 
-
     }
 
     /**
      * This inserts a new <code>Order</code> object.
      * @param order The object to be added.
-     * @return The object to be added.
+     *
      */
     @ApiMethod(name = "insertOrder")
-    public Order insertOrder(Order order) throws ConflictException {
+    public void insertOrder(Order order) throws ConflictException {
         //If if is not null, then check if it exists. If yes, throw an Exception
         //that it is already present
         /*if (order.getId() != -1) {
@@ -57,20 +56,12 @@ public class CustomerEndpoint {
         ObjectifyService.ofy().save().entity(t).now();
 
         //ofy().save().entity(order).now();
-        return order;
+        //return order;
     }
-
 
     private Table getTableOrder(long id) {
-
         return ObjectifyService.ofy().load().type(Table.class).id(id).now();
     }
-
-
-
-    
-
-
 
 
 }
