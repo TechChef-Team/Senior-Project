@@ -1,5 +1,7 @@
 package com.senior.techend.order;
 
+import com.senior.techend.restaurant.Table;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -29,6 +31,20 @@ public class Order {
 
     public void printReceipt() {
 
+    }
+
+    public Table getTableById(int id,ArrayList<Table> table){
+        Table requestedTable=null;
+        Table iteratedTable;
+        Iterator tableIterator = table.iterator();
+        for(int x = 0;x<table.size();x++){
+            if(tableIterator.hasNext()) {
+                iteratedTable = (Table) tableIterator.next();
+                if(iteratedTable.getTableId()==id)
+                    requestedTable=iteratedTable;
+            }
+        }
+        return requestedTable;
     }
 
     public ArrayList<String> viewOrder() {

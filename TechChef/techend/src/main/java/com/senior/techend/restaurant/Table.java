@@ -11,7 +11,7 @@ public class Table {
 
 	private Order order = new Order();
 	private Reservation reservation = new Reservation();
-	private int tableId;
+	private long tableId;
     private String tableStatus;
     private Waiter waiter = new Waiter();
 
@@ -28,6 +28,7 @@ public class Table {
     }
     public void addOrder(Order order){
     	this.order=order;
+        setTableStatus("Ordered");
     }
     public void setTableId(int tableId){
     	this.tableId = tableId;
@@ -37,7 +38,7 @@ public class Table {
     }
     public void setTableStatus(String tableStatus){
     	this.tableStatus=tableStatus;
-    	updateTableStatus();
+    	//updateTableStatus();
     }
     
     public Waiter getWaiter(){
@@ -46,7 +47,7 @@ public class Table {
     public Order getOrder(){
     	return order;
     }
-    public int getTableId(){
+    public long getTableId(){
     	return tableId;
     }
     public Reservation getReservation(){
@@ -57,25 +58,11 @@ public class Table {
     }
     public void notifyWaiter(){
     	 this.tableStatus="Need Waiter";
-    	 updateTableStatus();
-    	 waiter.notifyWaiter(this.tableId);
+    	// updateTableStatus();
+    	 //waiter.notifyWaiter(this.tableId);
     }
-    public void updateTableStatus(){
-    	///// update on tablet /////
-    }
-    public Table getTableById(int id,ArrayList<Table> table){
-        Table requestedTable=null;
-        Table iteratedTable;
-        Iterator tableIterator = table.iterator();
-        for(int x = 0;x<table.size();x++){
-            if(tableIterator.hasNext()) {
-                iteratedTable = (Table) tableIterator.next();
-                if(iteratedTable.getTableId()==id)
-                    requestedTable=iteratedTable;
-            }
-        }
-        return requestedTable;
-    }
+
+
     public String toString(){
         return "Table ID : "+this.tableId+"\n Table Status: "+this.tableStatus;
     }
