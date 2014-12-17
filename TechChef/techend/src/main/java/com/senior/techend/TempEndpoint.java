@@ -12,9 +12,12 @@ import com.google.api.server.spi.config.ApiNamespace;
 
 import com.google.api.server.spi.response.ConflictException;
 import com.googlecode.objectify.ObjectifyService;
+import com.senior.techend.order.Meal;
 import com.senior.techend.order.Order;
 import com.senior.techend.user.Waiter;
 import com.senior.techend.restaurant.Table;
+
+import java.util.ArrayList;
 
 import javax.inject.Named;
 
@@ -113,8 +116,8 @@ public class TempEndpoint {
      */
     @ApiMethod(name = "insertTableVar")
     public Table insertTableVar(@Named("id") Long id, @Named("status") String staus) throws ConflictException{
-
-        Table response = new Table(id,staus,new Order());
+        Order o = new Order(id, new ArrayList<Meal>());
+        Table response = new Table(id,staus,o);
         response= insertTable(response);
         return response;
     }

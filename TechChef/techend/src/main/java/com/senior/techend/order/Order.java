@@ -22,10 +22,14 @@ public class Order {
 
     }
 
+    public Order(long tableId,ArrayList<Meal> meal )
+    {
+        this.tableId = tableId ; this.meal = meal;
+    }
+
 
     public void addMeal(Meal meal) {
         this.meal.add(meal);
-
     }
 
     public void removeMeal(Meal meal) {
