@@ -12,8 +12,9 @@ import com.google.api.server.spi.config.ApiNamespace;
 
 import com.google.api.server.spi.response.ConflictException;
 import com.googlecode.objectify.ObjectifyService;
+import com.senior.techend.order.Order;
 import com.senior.techend.user.Waiter;
-
+import com.senior.techend.restaurant.Table;
 
 import javax.inject.Named;
 
@@ -31,6 +32,7 @@ public class TempEndpoint {
     public TempEndpoint(){
 
         ObjectifyService.register(Waiter.class);
+        ObjectifyService.register(Table.class);
 
     }
 
@@ -62,7 +64,7 @@ public class TempEndpoint {
      * @return The object to be added.
      */
     @ApiMethod(name = "insertWaiterByVar")
-    public Waiter insertWaiterByVar(@Named("id") Long id, @Named("status") String name) throws ConflictException{
+    public Waiter insertWaiterByVar(@Named("id") Long id, @Named("name") String name) throws ConflictException{
 
         Waiter response = new Waiter(id,name);
         response= insertWaiter(response);
@@ -75,10 +77,45 @@ public class TempEndpoint {
      * @return The object to be added.
      */
     @ApiMethod(name = "newInsertWaiterByVar")
-    public Waiter newInsertWaiterByVar(@Named("id") Long id, @Named("status") String name) throws ConflictException{
+    public Waiter newInsertWaiterByVar(@Named("id") Long id, @Named("name") String name) throws ConflictException{
 
         Waiter response = new Waiter(id,name);
         //response= insertWaiter(response);
+        return response;
+    }
+
+    /**
+     * This inserts a new <code>Order</code> object.
+     * @param table The object to be added.
+     * @return The object to be added.
+     */
+    @ApiMethod(name = "insertTable")
+    public Table insertTable(Table table) throws ConflictException {
+        //If if is not null, then check if it exists. If yes, throw an Exception
+        //that it is already present
+        /*if (order.getId() != -1) {
+            if (findOrder(order.getId()) != null) {
+                throw new ConflictException("Object already exists");
+            }
+        }*/
+        //Since our @Id field is a Long, Objectify will generate a unique value for us
+        //when we use put
+        //ObjectifyService.register(Order.class);
+        ObjectifyService.ofy().save().entity(table).now();
+        //ofy().save().entity(order).now();
+        return table;
+    }
+
+    /**
+     * This insert a new  <code>Order</code> object by variables.
+     * @param id,staus The object to be added.
+     * @return The object to be added.
+     */
+    @ApiMethod(name = "insertTableVar")
+    public Table insertTableVar(@Named("id") Long id, @Named("status") String staus) throws ConflictException{
+
+        Table response = new Table(id,staus,new Order());
+        response= insertTable(response);
         return response;
     }
 

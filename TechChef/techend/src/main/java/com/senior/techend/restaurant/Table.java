@@ -1,5 +1,6 @@
 package com.senior.techend.restaurant;
 
+import com.google.appengine.repackaged.org.codehaus.jackson.map.annotate.JsonSerialize;
 import com.senior.techend.order.Order;
 import com.senior.techend.user.Employee;
 import com.senior.techend.user.Waiter;
@@ -13,9 +14,9 @@ import java.util.Iterator;
 @Entity
 public class Table {
     @Id
-    private long id;
+    private long id = 1;
     @Index
-    private long tableId;
+    private long tableId = 1;
     @Index
     private String tableStatus;
     @Index

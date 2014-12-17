@@ -11,11 +11,16 @@ import java.util.Iterator;
 @Entity
 public class Order {
     @Id
-    private long id;
+    private long id= 1;
     @Index
-    private long tableId = 0;
+    private long tableId = 1;
     @Index
     private ArrayList<Meal> meal = new ArrayList<Meal>();
+
+    public Order()
+    {
+
+    }
 
 
     public void addMeal(Meal meal) {

@@ -13,7 +13,7 @@ import java.util.Iterator;
 @Entity @JsonSerialize
 public class Waiter {
     @Id
-    private long id = -1;
+    private long id = 1;
     private String name = "Waiter 1";
 
     public Waiter()

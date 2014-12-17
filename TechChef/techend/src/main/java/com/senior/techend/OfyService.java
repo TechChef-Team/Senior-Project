@@ -3,6 +3,7 @@ package com.senior.techend;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
+import com.senior.techend.restaurant.Table;
 import com.senior.techend.user.Waiter;
 
 /**
@@ -13,6 +14,7 @@ public class OfyService {
     static {
 
         ObjectifyService.register(Waiter.class);
+        ObjectifyService.register(Table.class);
     }
 
     public static Objectify ofy()
