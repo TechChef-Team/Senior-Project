@@ -8,7 +8,7 @@ public class Menu {
 public Menu(){
 
         ///// get the meals from the database (this is just an example) /////
-        Meal meal1 = new Meal(null,"Caesar Salad Sandwich",15,0);
+        /*Meal meal1 = new Meal(null,"Caesar Salad Sandwich",15,0);
         Meal meal2 = new Meal(null,"Rib-Eye Steak",76,2);
         Meal meal3 = new Meal(null,"Country Fried Chicken",45,2);
         Meal meal4 = new Meal(null,"TripleCheese Burger ",24,0);
@@ -16,7 +16,17 @@ public Menu(){
         Meal meal6 = new Meal(null,"Appetizer Platter",32,1);
         Meal meal7 = new Meal(null,"Chocolate Mousse",10,3);
         Meal meal8 = new Meal(null,"Banana Split",10,3);
-        Meal meal9 = new Meal(null,"Chocolate Souffle",12,3);
+        Meal meal9 = new Meal(null,"Chocolate Souffle",12,3);*/
+
+        Meal meal1 = new Meal("Caesar Salad Sandwich",15,0);
+        Meal meal2 = new Meal("Rib-Eye Steak",76,2);
+        Meal meal3 = new Meal("Country Fried Chicken",45,2);
+        Meal meal4 = new Meal("TripleCheese Burger ",24,0);
+        Meal meal5 = new Meal("Onion Rings",10,1);
+        Meal meal6 = new Meal("Appetizer Platter",32,1);
+        Meal meal7 = new Meal("Chocolate Mousse",10,3);
+        Meal meal8 = new Meal("Banana Split",10,3);
+        Meal meal9 = new Meal("Chocolate Souffle",12,3);
 
         ArrayList<Meal> mealsForDB = new ArrayList<Meal>();
         mealsForDB.add(meal1);
@@ -120,15 +130,15 @@ public void updateDatebase(ArrayList<Meal> updatedMeals){
     public ArrayList<Meal> getMenu(){
 
         ///// get the meals from the database (this is just an example) /////
-        Meal meal1 = new Meal(null,"Caesar Salad Sandwich",15,0);
-        Meal meal2 = new Meal(null,"Rib-Eye Steak",76,2);
-        Meal meal3 = new Meal(null,"Country Fried Chicken",45,2);
-        Meal meal4 = new Meal(null,"TripleCheese Burger ",24,0);
-        Meal meal5 = new Meal(null,"Onion Rings",10,1);
-        Meal meal6 = new Meal(null,"Appetizer Platter",32,1);
-        Meal meal7 = new Meal(null,"Chocolate Mousse",10,3);
-        Meal meal8 = new Meal(null,"Banana Split",10,3);
-        Meal meal9 = new Meal(null,"Chocolate Souffle",12,3);
+        Meal meal1 = new Meal("Caesar Salad Sandwich",15,0);
+        Meal meal2 = new Meal("Rib-Eye Steak",76,2);
+        Meal meal3 = new Meal("Country Fried Chicken",45,2);
+        Meal meal4 = new Meal("TripleCheese Burger ",24,0);
+        Meal meal5 = new Meal("Onion Rings",10,1);
+        Meal meal6 = new Meal("Appetizer Platter",32,1);
+        Meal meal7 = new Meal("Chocolate Mousse",10,3);
+        Meal meal8 = new Meal("Banana Split",10,3);
+        Meal meal9 = new Meal("Chocolate Souffle",12,3);
 
         ArrayList<Meal> mealsForDB = new ArrayList<Meal>();
         mealsForDB.add(meal1);
