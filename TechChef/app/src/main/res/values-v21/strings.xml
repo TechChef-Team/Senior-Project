@@ -12,10 +12,5 @@
     <string name="waiter">Waiter View</string>
     <string name="title_activity_monitor_tables">MonitorTables</string>
     <string name="title_activity_cutomer_menu">CutomerMenu</string>
-    <string name="title_activity_restaurant">TechChef Restaurant</string>
-    <string name="customer">Customer</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_table_view_for_monitor_table">TableViewForMonitorTable</string>
-    <string name="Chef" />
 
 </resources>
