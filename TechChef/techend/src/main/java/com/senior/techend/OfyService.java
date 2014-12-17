@@ -3,6 +3,7 @@ package com.senior.techend;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
+import com.senior.techend.user.Waiter;
 
 /**
  * Created by Mohammad on 12/15/2014.
@@ -10,7 +11,8 @@ import com.googlecode.objectify.ObjectifyService;
 public class OfyService {
 
     static {
-       // ObjectifyService.register(Order.class);
+
+        ObjectifyService.register(Waiter.class);
     }
 
     public static Objectify ofy()

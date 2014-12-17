@@ -4,24 +4,34 @@ import com.senior.techend.order.Order;
 import com.senior.techend.user.Employee;
 import com.senior.techend.user.Waiter;
 
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-
+@Entity
 public class Table {
-
-	private Order order = new Order();
-	private Reservation reservation = new Reservation();
-	private long tableId;
+    @Id
+    private long id;
+    @Index
+    private long tableId;
+    @Index
     private String tableStatus;
-    private Waiter waiter = new Waiter();
+    @Index
+	private Order order = new Order();
+    @Index
+    private Waiter waiter = new Waiter(1,"Waiter 1");
 
-    public Table(int tableId, String tableStatus, Order order){
+
+
+    public Table(long tableId, String tableStatus, Order order){
         this.tableId=tableId;
         this.tableStatus=tableStatus;
         this.order=order;
         //this.waiter=waiter;
     }
-    public Table(int tableId){this.tableId=tableId;}
+    public Table(long tableId){this.tableId=tableId;}
     public void addWaiter(Waiter waiter)
     {
        this.waiter=waiter;        	
@@ -30,11 +40,11 @@ public class Table {
     	this.order=order;
         setTableStatus("Ordered");
     }
-    public void setTableId(int tableId){
+    public void setTableId(long tableId){
     	this.tableId = tableId;
     }
     public void setReservation(Reservation reservation){
-    	this.reservation= reservation;
+    	//this.reservation= reservation;
     }
     public void setTableStatus(String tableStatus){
     	this.tableStatus=tableStatus;
@@ -50,9 +60,10 @@ public class Table {
     public long getTableId(){
     	return tableId;
     }
+    /*
     public Reservation getReservation(){
     	return reservation;
-    }
+    }*/
     public String getTableStatus(){
     	return tableStatus;
     }

@@ -2,7 +2,7 @@ package com.senior.techend.user;
 
 public class Employee {
 
- private int id;
+ private long id;
  private String name;
  private String password;
 	
@@ -17,7 +17,7 @@ public class Employee {
 	 
  }
  
- public int getId(){
+ public long getId(){
 	 return id;
  }
  public String getName(){
@@ -27,7 +27,7 @@ public class Employee {
 	 return password;
  }
  
- public void setid(int id){
+ public void setid(long id){
 	 this.id=id;
  }
  public void setName(String name){

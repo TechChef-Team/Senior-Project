@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 
 public class MealItem extends Meal {
-    
-	
-	
-	public MealItem(ArrayList<MealItem> items, String name, double price,
+
+	public MealItem(String name, double price,
                     int category) {
-		super(items, name, price, category);
+		super(name, price, category);
 		
 	}
 

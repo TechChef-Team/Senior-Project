@@ -2,12 +2,21 @@ package com.senior.techend.order;
 
 import com.senior.techend.restaurant.Table;
 
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-
+@Entity
 public class Order {
+    @Id
+    private long id;
+    @Index
+    private long tableId = 0;
+    @Index
     private ArrayList<Meal> meal = new ArrayList<Meal>();
-    private int tableId = 0;
+
 
     public void addMeal(Meal meal) {
         this.meal.add(meal);
@@ -67,7 +76,7 @@ public class Order {
         updateDataBase();
     }
 
-    public int getTableId() {
+    public long getTableId() {
         return (this.tableId);
     }
 
